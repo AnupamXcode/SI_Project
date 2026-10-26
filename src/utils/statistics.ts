@@ -257,3 +257,35 @@ export function calculateWelchTTest(groupA: number[], groupB: number[]) {
     ciUpper: Number((meanDiff + margin).toFixed(2))
   };
 }
+
+export function interpretCorrelation(r: number, var1Label: string, var2Label: string): { strength: string; direction: string; text: string } {
+  const absR = Math.abs(r);
+  const direction = r > 0.05 ? 'positive' : r < -0.05 ? 'negative' : 'negligible';
+  let strength = 'negligible';
+
+  if (absR >= 0.7) strength = 'strong';
+  else if (absR >= 0.4) strength = 'moderate';
+  else if (absR >= 0.15) strength = 'mild';
+
+  let text = '';
+  if (r === 1) {
+    text = `Perfect identity correlation (${var1Label} with itself).`;
+  } else if (absR < 0.08) {
+    text = `There is virtually no linear association between ${var1Label} and ${var2Label} (r = ${r.toFixed(2)}).`;
+  } else if (r > 0.7) {
+    text = `A strong positive linear relationship (r = +${r.toFixed(2)}). Higher values of ${var1Label} strongly track higher values of ${var2Label}. Note that this measures association, not direct causation.`;
+  } else if (r > 0.3) {
+    text = `A moderate positive relationship (r = +${r.toFixed(2)}). As ${var1Label} increases, ${var2Label} tends to rise, though other confounding factors play a substantial role.`;
+  } else if (r > 0) {
+    text = `A mild positive correlation (r = +${r.toFixed(2)}). A slight upward tendency is observed, but individual student variability is high.`;
+  } else if (r < -0.7) {
+    text = `A strong inverse relationship (r = ${r.toFixed(2)}). Increases in ${var1Label} are consistently accompanied by lower values in ${var2Label}.`;
+  } else if (r < -0.3) {
+    text = `A moderate negative relationship (r = ${r.toFixed(2)}). As ${var1Label} increases, ${var2Label} shows a clear downward tendency.`;
+  } else {
+    text = `A mild negative correlation (r = ${r.toFixed(2)}). Slight inverse association exists, but cannot be inferred as an isolated cause.`;
+  }
+
+  return { strength, direction, text };
+}
+

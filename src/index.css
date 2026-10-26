@@ -3,14 +3,14 @@
 @layer base {
   :root {
     --bg-page: #FAF7F0;
-    --forest-green: #173B32;
-    --burnt-orange: #D95D24;
-    --soft-orange: #F4D4BD;
+    --forest-green: #203B2F;
+    --burnt-orange: #D65A24;
+    --soft-orange: #F3D6C2;
     --muted-sage: #DCE5D8;
-    --warm-yellow: #E8C779;
-    --main-text: #26342E;
+    --warm-gold: #DDBB67;
+    --main-text: #292F2A;
     --secondary-text: #74766F;
-    --border-color: #E8E4DB;
+    --border-color: #E7E1D6;
   }
 
   body {
