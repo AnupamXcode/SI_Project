@@ -41,7 +41,7 @@ const initialFilters: FilterState = {
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
 export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('overview');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('home');
   const [filters, setFilters] = useState<FilterState>(initialFilters);
   const [customRecords, setCustomRecords] = useState<StudentRecord[] | null>(null);
   const [selectedStudentRecord, setSelectedStudentRecord] = useState<StudentRecord | null>(null);

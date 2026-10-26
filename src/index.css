@@ -2,28 +2,26 @@
 
 @layer base {
   :root {
-    --bg-page: #FAF8F3;
-    --primary-green: #456B52;
-    --soft-sage: #DCE8D8;
-    --muted-terracotta: #C77D60;
-    --warm-yellow: #E8C875;
-    --text-primary: #292D28;
-    --text-secondary: #77776F;
+    --bg-page: #FAF7F0;
+    --forest-green: #173B32;
+    --burnt-orange: #D95D24;
+    --soft-orange: #F4D4BD;
+    --muted-sage: #DCE5D8;
+    --warm-yellow: #E8C779;
+    --main-text: #26342E;
+    --secondary-text: #74766F;
     --border-color: #E8E4DB;
-    --border-subtle: #F0ECE4;
-    --card-surface: #FFFFFF;
   }
 
   body {
     background-color: var(--bg-page);
-    color: var(--text-primary);
+    color: var(--main-text);
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.5;
   }
 
   h1, h2, h3, .font-heading {
     font-family: 'Playfair Display', Georgia, serif;
-    color: var(--text-primary);
     letter-spacing: -0.015em;
   }
 
@@ -32,25 +30,13 @@
   }
 }
 
-/* Minimalist container utilities */
-.surface-card {
-  background-color: #FFFFFF;
-  border: 1px solid #E8E4DB;
-  border-radius: 8px;
-}
-
-.flat-panel {
-  border-top: 1px solid #E8E4DB;
-  border-bottom: 1px solid #E8E4DB;
-}
-
-/* Scrollbar */
+/* Subtle transitions & scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F3;
+  background: #FAF7F0;
 }
 ::-webkit-scrollbar-thumb {
   background: #D8D4CA;

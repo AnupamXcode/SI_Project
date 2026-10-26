@@ -4,9 +4,9 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { StudentDetailModal } from './components/modals/StudentDetailModal';
 
-// 4 Clean Views
-import { OverviewView } from './views/OverviewView';
-import { PerformanceView } from './views/PerformanceView';
+// Four Simple, Full-Width Sections
+import { HomeView } from './views/HomeView';
+import { AnalysisView } from './views/AnalysisView';
 import { FactorsView } from './views/FactorsView';
 import { ExplorerView } from './views/ExplorerView';
 
@@ -14,22 +14,22 @@ export const App: React.FC = () => {
   const { activeTab } = useData();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F3] text-[#292D28] antialiased">
-      {/* Minimal Top Navigation */}
+    <div className="min-h-screen flex flex-col bg-[#FAF7F0] text-[#26342E] antialiased">
+      {/* Full-Width Top Navigation */}
       <Navbar />
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
-        {activeTab === 'overview' && <OverviewView />}
-        {activeTab === 'performance' && <PerformanceView />}
+      {/* Main Full-Width Content with ~5% horizontal padding */}
+      <main className="flex-1 w-full px-[5%] py-8">
+        {activeTab === 'home' && <HomeView />}
+        {activeTab === 'analysis' && <AnalysisView />}
         {activeTab === 'factors' && <FactorsView />}
-        {activeTab === 'explorer' && <ExplorerView />}
+        {activeTab === 'dataset' && <ExplorerView />}
       </main>
 
-      {/* Individual Student Profile Modal */}
+      {/* Individual Student Detail Modal */}
       <StudentDetailModal />
 
-      {/* Clean Editorial Footer */}
+      {/* Clean Full-Width Editorial Footer */}
       <Footer />
     </div>
   );

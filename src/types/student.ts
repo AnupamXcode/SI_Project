@@ -36,7 +36,7 @@ export interface StudentRecord {
   G3: number;
 }
 
-export type ActiveTab = 'overview' | 'performance' | 'factors' | 'explorer';
+export type ActiveTab = 'home' | 'analysis' | 'factors' | 'dataset';
 
 export type SubjectFilter = 'all' | 'Mathematics' | 'Portuguese';
 
